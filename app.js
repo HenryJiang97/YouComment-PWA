@@ -33,4 +33,4 @@ app.get('/send-notification', (req, res) => {
   res.end();
 });
 
-app.listen(port, () => console.log(`Example app listening at https://you-comment-pwa.herokuapp.com:${port}`));
+app.listen(port, () => console.log(`Example app listening at https://you-comment-pwa.herokuapp.com`));
