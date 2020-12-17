@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const webpush = require('web-push');
 const app = express();
-const port = 9999;
 
 const VAPID_PUBLIC = 'BFFNIqiLfQXkEKRkcFYPK3Szmc__zt7n1uQnH_y24rcr6vCJ08ChDmQEoVTtMJNTlgjDwkC6-eCX578vpYm3J5g';
 const VAPID_PRIVATE = 'Gtx2qf0RAE6wpxarCB4P-jxURN-ldb3VJoJ8gH8M_M0';
@@ -33,4 +32,7 @@ app.get('/send-notification', (req, res) => {
   res.end();
 });
 
-app.listen(() => console.log(`Example app listening at https://you-comment-pwa.herokuapp.com`));
+const port = process.env.PORT || 9999;
+app.listen(port, function() {
+  console.log("starting at " + port);
+})
